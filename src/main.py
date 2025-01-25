@@ -1,7 +1,7 @@
 from src.data_pipeline.data_ingestion import *
 
 
-# Função main
+# Função main do arquivo principal
 def main():
     insert_areas_data()
     insert_habits_data()
