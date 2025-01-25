@@ -1,5 +1,11 @@
-from src.data_pipeline.data_ingestion import *
+import sys
+import os
 
+# Se o script está sendo executado a partir do diretório src, adicione o diretório acima ao sys.path
+if os.path.basename(os.getcwd()) == 'src':
+    sys.path.insert(0, os.path.abspath(os.path.join(os.getcwd(), '..')))
+
+from data_pipeline.data_ingestion import *
 
 # Função main do arquivo principal
 def main():
@@ -10,6 +16,8 @@ def main():
 
     # Fechando a sessão
     session.close()
+
+    print("Arquivo main.py executado com sucesso!")
 
 if __name__ == "__main__":
     main()
