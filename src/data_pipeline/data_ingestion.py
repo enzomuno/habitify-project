@@ -23,6 +23,7 @@ engine = create_engine(DATABASE_URL)
 Base = declarative_base()
 
 
+
 # Definição da Class 'Areas'
 class Areas(Base):
     __tablename__ = 'tdim_areas'
