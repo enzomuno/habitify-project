@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 from sqlalchemy import create_engine, Column, String, DateTime, Integer
 from sqlalchemy import ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
@@ -14,9 +13,7 @@ from src.api import *
 from src.data_pipeline import *
 
 
-load_dotenv()
-
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv('DATABASE_URL')
 engine = create_engine(DATABASE_URL)
 
 # Base para definir modelos
