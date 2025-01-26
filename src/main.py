@@ -9,13 +9,13 @@ from data_pipeline.data_ingestion import *
 
 # Função main do arquivo principal
 def main():
-    #insert_areas_data()
-    #insert_habits_data()
-    #insert_journal_data()
-    #insert_moods_data()
+    insert_areas_data()
+    insert_habits_data()
+    insert_journal_data()
+    insert_moods_data()
 
     # Fechando a sessão
-    # session.close()
+    session.close()
 
     print("Arquivo main.py executado com sucesso!")
     teste()
