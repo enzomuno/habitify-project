@@ -1,29 +1,43 @@
+name: Run Daily at 23:00 BRT
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Agendar o job para rodar todos os dias às 23:00 (horário de Brasília, UTC-3)
+    - cron: '0 2 * * *'
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
     env:
+      # Definindo as variáveis de ambiente a partir dos Secrets do GitHub
       HABITIFY_API_KEY: ${{ secrets.HABITIFY_API_KEY }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
+      # Passo 1: Fazer o checkout do código
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Passo 2: Configurar o Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.12'
 
+      # Passo 3: Instalar dependências
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r src/requirements.txt
 
+      # Passo 4: Imprimir variáveis de ambiente para debugging
       - name: Print environment variables for debugging
         run: |
           echo "DATABASE_URL=${DATABASE_URL}"
           echo "HABITIFY_API_KEY=${HABITIFY_API_KEY}"
 
+      # Passo 5: Rodar o script
       - name: Run the script
         run: |
           cd src
