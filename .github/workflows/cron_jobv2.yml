@@ -18,16 +18,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12'  # Atualizado para Python 3.12
+          python-version: '3.12'  # Usando Python 3.12
 
       - name: Clear pip cache
         run: |
-          python -m pip cache purge  # Limpa o cache do pip para evitar pacotes antigos
+          python -m pip cache purge  # Limpa o cache do pip
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r src/requirements.txt
+          pip install -r src/requirements.txt  # Instala dependências com a versão atualizada do pandas
 
       - name: Run the script
         run: |
