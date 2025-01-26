@@ -18,7 +18,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.12'  # Atualizado para Python 3.12
+
+      - name: Clear pip cache
+        run: |
+          python -m pip cache purge  # Limpa o cache do pip para evitar pacotes antigos
 
       - name: Install dependencies
         run: |
