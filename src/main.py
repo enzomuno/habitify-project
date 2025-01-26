@@ -18,7 +18,6 @@ def main():
     session.close()
 
     print("Arquivo main.py executado com sucesso!")
-    teste()
 
 if __name__ == "__main__":
     main()
