@@ -1,6 +1,5 @@
 import os
 import requests
-from dotenv import load_dotenv
 from src.utils import to_iso8601_21, to_iso8601_23
 
 
@@ -8,12 +7,9 @@ from src.utils import to_iso8601_21, to_iso8601_23
 actual_date_23 = to_iso8601_23()
 actual_date_21 = to_iso8601_21()
 
-# Carregador as credenciais no .env
-load_dotenv()
-API_KEY = os.getenv("HABITIFY_API_KEY")
+HABITIFY_API_KEY = os.getenv('HABITIFY_API_KEY')
 
 base_url = 'https://api.habitify.me'
-
 
 
 
